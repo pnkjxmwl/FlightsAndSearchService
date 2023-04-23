@@ -17,5 +17,5 @@
     "dialect": "mysql"
   }
 }
-```
+``` 
 -Go to Src Folder  from terminal and execute the command `npx sequelize db:create` 
