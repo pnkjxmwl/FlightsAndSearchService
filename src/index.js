@@ -8,11 +8,13 @@ const setupAndStartServer= async()=>{
     const app=express();
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:true}));
-    app.listen(PORT,()=>{
+
+    app.listen(PORT,async ()=>{
+
         console.log(`server started at ${PORT}`)
-        const repo= new CityRepository();
-        repo.createCity({name:"goa"})
- 
+        const repo=new CityRepository();
+        repo.deleteCity(6)
+
     })
 }
 
