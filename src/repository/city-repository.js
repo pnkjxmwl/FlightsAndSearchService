@@ -45,7 +45,7 @@ class CityRepository{
 
 
     }
-    async updateCity(cityid,data){ //data is a object containing what needs to be updated
+    async updateCity(cityid,data){ //data is a object containing what needs to be updated   { name:" alahabad"} 
  
         try{
             const city= await City.update(data,{
