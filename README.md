@@ -20,7 +20,11 @@
 ``` 
 
 ```
--Go to Src Folder  from terminal and execute the command `npx sequelize db:create`  
+-Go to Src Folder  from terminal and execute the command 
+`npx sequelize db:create`  
+and then execute   
+ `npx sequelize db:migrate`  
+ 
 ```
 
 ## DB Design
