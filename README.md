@@ -18,5 +18,40 @@
   }
 }
 ``` 
+
+```
 -Go to Src Folder  from terminal and execute the command `npx sequelize db:create`  
 ```
+
+## DB Design
+  - Airplane Table  
+      - id  (uniquely identify airplane)
+      - model_number 
+      - capacity 
+      - created_at  (when  was a entry created) 
+      - updated_at  (when the entry was last updated)
+  - Flights  
+      - id 
+      - airplane_id  
+      - src_airport_id  
+      - dest_airport_id  
+      - flight_number   
+      - departure    
+      - arrival     
+  - Airport  
+      - id  
+      - name  
+      - city_id  
+      - address  
+  - City
+      - id  
+      - name  
+  
+## ER Diagram 
+  Airplane --- 1 : N ---> Flights  
+      - A flight belongs to an airplane but one airplane can be used  in multiple flights   
+  Airport  --- 1 : N ---> Flights  
+      - One airport can have many flights but a flight belongs to one airport   
+  City     --- 1 : N ---> Airport   
+      - A city has many airport but one airport belongs to a city    
+
