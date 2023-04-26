@@ -48,12 +48,16 @@ class CityRepository{
     async updateCity(cityid,data){ //data is a object containing what needs to be updated   { name:" alahabad"} 
  
         try{
-            const city= await City.update(data,{
-                where:{
-                    id:cityid
-                }
-            })
-
+            //this below approach works but did not  return updated object 
+            // const city= await City.update(data,{
+            //     where:{
+            //         id:cityid
+            //     }
+            // })
+            const city= await City.findByPk(cityid);
+            city.name=data.name
+            await city.save();
+                return city;
         }
         catch(error){
             throw {error}
