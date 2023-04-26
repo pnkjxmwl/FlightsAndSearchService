@@ -1,5 +1,5 @@
 const { City }= require('../models/index')   // models/index.js have all the models ,we can use it by destructuring
-
+const { Op }= require('sequelize')
 class CityRepository{
 
     async createCity({ name }){    
@@ -65,9 +65,22 @@ class CityRepository{
 
     }
 
-    async getallCities(){
+    async getallCities(filter){ //filter can be empty also
 
         try {
+
+            if(filter.name)
+            {
+                    const cities= await City.findAll({
+                        where:{
+                                name:{
+                                    [Op.startsWith]:filter.name
+                                }
+                        }
+                    })
+
+                    return cities; 
+            }
             const cities= await City.findAll();
             return cities;
             
