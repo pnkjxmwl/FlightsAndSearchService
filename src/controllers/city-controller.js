@@ -2,6 +2,7 @@ const { CityService }= require('../services/index')
 
 const cityService= new CityService();
 
+//POST --> req.body
 const create = async (req,resp)=>{
     try{
         const city= await cityService.createCity(req.body)
@@ -74,7 +75,7 @@ const get = async(req,resp)=>{
 }
 
 
-//PATCH - /city/:id ->req.body
+//PATCH - /city/:id ->req.body(data in req body)
 const update = async (req,resp)=>{
     try{
         const city= await cityService.updateCity(req.params.id,req.body)
