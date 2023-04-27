@@ -23,6 +23,17 @@ class FlightService {
             throw {error}
         }
     }
+    async getAllflights(data)
+    {
+        try {
+            const flights= await this.flightRepository.getAllFlight(data);
+            return flights
+        } catch (error) {
+            throw {error}
+        }
+    }
+
+
 
 
 }
